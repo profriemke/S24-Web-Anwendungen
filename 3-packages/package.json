@@ -1,0 +1,15 @@
+{
+  "name": "3-packages",
+  "version": "1.0.0",
+  "description": "",
+  "main": "1.js",
+  "scripts": {
+    "dev": "node 2.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ich",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^9.4.3"
+  }
+}
