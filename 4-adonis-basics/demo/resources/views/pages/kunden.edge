@@ -7,16 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Namen</h1>
-    <ul>
-        @if(isLoggedIn)
-            @each(name in namen)
-                <li>{{ name }}</li>
-            @end
-        @else
-            Bitte einloggen!
-        @end
-    </ul>
-    
+    <h1>Unsere Kunden</h1>
+    @each(kunde in kunden)
+        <p>
+            {{ kunde.nachname }}<br>
+            {{ kunde.vorname }}<br>
+            {{ kunde.kundennr }}<br>
+            {{ kunde.plz }}<br>
+        </p>
+    @end
 </body>
 </html>

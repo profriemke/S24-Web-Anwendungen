@@ -7,16 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Namen</h1>
-    <ul>
-        @if(isLoggedIn)
-            @each(name in namen)
-                <li>{{ name }}</li>
-            @end
-        @else
-            Bitte einloggen!
-        @end
-    </ul>
-    
+    <h1>Das Ergebnis</h1>
+    <p>
+        spitze: {{ votes.spitze}}
+    </p>
+    <p>
+        geht so: {{ votes.geht }}
+    </p>
+    <p>
+        weg damit: {{ votes.weg }}
+    </p>
+    <a href="/vote">neu abstimmen</a>
 </body>
 </html>
