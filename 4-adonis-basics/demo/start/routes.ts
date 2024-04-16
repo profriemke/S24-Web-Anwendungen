@@ -68,6 +68,7 @@ router.get('/nutzer', async({ view })=>{
 })
 
 router.post('/nutzer/anzeigen', async({ request, view })=>{
+    // const { vorname, nachname }  =   request.all()
     const vorname = request.input('vorname')
     if(vorname === undefined){
         return 'Fehler'

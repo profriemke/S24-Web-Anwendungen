@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Home - Mein Blog </title>
+
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+<body>
+  <h1>Mein Blog</h1>
+  <p>
+    <a href="/admin/post/create">Post erstellen</a>
+  </p>
+  <p>Willkommen auf meinem Blog. Hier schreibe ich über alles, was nicht interessiert.</p>
+  @each(post in posts)
+      <h2>{{ post.title }}</h2>
+      {{ post.teaser }} <a href="/post/{{ post.id }}">mehr ...</a>
+    </p>
+  @end
+</body>
+</html>
