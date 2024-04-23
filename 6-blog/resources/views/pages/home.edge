@@ -1,17 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Home - Mein Blog </title>
+@include('partials/html_header')
+ <!-- @vite(['resources/css/app.css', 'resources/js/app.js'])-->
 
-  @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
 <body>
+  @include('partials/navigation')
   <h1>Mein Blog</h1>
+  @if(user == undefined)
   <p>
-    <a href="/admin/post/create">Post erstellen</a>
+      <a href="/login">Login</a>
   </p>
+  @else
+    <p>
+      Hallo, {{ user.vorname }}!
+    </p>
+     <p>
+
+       <a href="/admin/post/create">Post erstellen</a>
+       <a href="/logout">Logout</a>
+     </p>
+  @end
+    
+ 
   <p>Willkommen auf meinem Blog. Hier schreibe ich über alles, was nicht interessiert.</p>
   @each(post in posts)
       <h2>{{ post.title }}</h2>

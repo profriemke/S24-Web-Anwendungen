@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ post.title }} - Mein Blog</title>
-</head>
+@include('partials/html_header')
 <body>
     <h1>{{ post.title }}</h1>
     <p>{{ post.teaser }}</p>
     <p>{{ post.text }}</p>
     <p>{{ new Date(post.date).toLocaleDateString() }}</p>
-    <p>{{ post.author }}</p>
+    <p>{{ author.vorname }} {{ author.nachname }}</p>
     <p><a href="/">zurück zur Übersicht</a></p>    
 </body>
 </html>
