@@ -72,12 +72,44 @@ router.post('/admin/post/create', async({ request, response, session })=>{
     return response.redirect('/')
 })
 
-router.get('/post/:id', async({ view, params })=>{
+router.get('/post/:id', async({ view, params, session })=>{
     const post = await db.from('posts').where('id', params.id).first()
     const author = await db.from('user').select('vorname','nachname').where('login', post.author).first()
-    return view.render('pages/post', { post, author, pageTitle: post.title+' - Mein Blog' })
+    return view.render('pages/post', { post, author, pageTitle: post.title+' - Mein Blog', user:session.get('user') })
 })
 
+
+router.get('/edit/:id', async({ view, params, session, response })=>{
+    if(!session.get('user')){
+        return response.redirect('/login')
+    }
+    const post = await db.from('posts').where({
+        id: params.id,
+    }).first()
+    return view.render('pages/admin/post_edit', { post: post })
+
+})
+
+router.post('/edit', async({ request, response, session })=>{
+    if(!session.get('user')){
+        return response.redirect('/login')
+    }
+    const result = await db.from('posts')
+                   .update(
+                     { title: request.input('title'), 
+                       teaser: request.input('teaser'), 
+                       text: request.input('text'),
+                       date: new Date().toString()
+                    })
+                    .where(
+                      {
+                        id: request.input('id')
+                    })
+    if(!result){
+        return 'Fehler'
+    }
+    return response.redirect('/post/'+request.input('id'))
+})
 
 router.get('/session/a', async({ response, session })=>{
     session.put('name', 'RIemke')

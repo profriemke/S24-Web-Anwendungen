@@ -6,5 +6,8 @@
     <p>{{ new Date(post.date).toLocaleDateString() }}</p>
     <p>{{ author.vorname }} {{ author.nachname }}</p>
     <p><a href="/">zurück zur Übersicht</a></p>    
+    @if(user !=undefined)
+    <a href="/edit/{{ post.id }}">bearbeiten</a>
+    @end
 </body>
 </html>
