@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            border: 1px solid black;
+
+        }
+
+        #box1 {
+            background-color: red;
+            float: left;
+            width: 100px;
+            height: 100px;
+
+        }
+
+        #box2 {
+            background-color: green;
+            float: left;
+            width: 100px;
+            height: 100px;
+        }
+
+        .clearfix:after {
+            content: ".";
+            display: block;
+            clear: both;
+            font-size: 0;
+            height: 0;
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container" class="clearfix">
+        <div id="box1"></div>
+        <div id="box2"></div>
+    </div>
+
+</body>
+
+</html>
