@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+        
+            $('#box').click(function () {
+                $('#box').css('background-color', 'red')
+                $('#box').html('Klick mich nicht') //schreiben
+                console.log($('#box').html()) // auslesen
+            })
+            
+        
+        })
+
+
+
+    </script>
+</head>
+
+<body>
+<div id="box"></div>
+
+
+
+</html>

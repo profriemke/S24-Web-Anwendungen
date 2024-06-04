@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav ul {
+            display: flex;
+            flex-direction: row;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        nav ul li {
+            list-style: none;
+        }
+        nav ul li a {
+            width: 110px;
+            height: 20px;
+            padding: 3px;
+            display: inline-block;
+            color: #ffffff;
+            background-color: darkorange;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: rgb(217, 151, 30);
+        }
+        @media (0px <= width <= 461px){
+            nav ul{
+                flex-direction: column;
+                width:100%;
+            }
+            nav ul li a{
+                width:100%;
+                height: 2em;
+                text-align: center;
+                font-size: 2em;
+                margin-top: 3px;;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Produkte</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Das Team</a></li>
+        </ul>
+    </nav>
+
+</body>
+
+</html>
