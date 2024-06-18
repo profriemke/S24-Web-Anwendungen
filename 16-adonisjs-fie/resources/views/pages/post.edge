@@ -1,0 +1,14 @@
+@include('partials/html_header')
+<body>
+    <h1>{{ post.title }}</h1>
+    <img src="/uploads/{{post.image}}" height="200" alt="{{post.title}}">
+    <p>{{ post.teaser }}</p>
+    <p>{{ post.text }}</p>
+    <p>{{ new Date(post.date).toLocaleDateString() }}</p>
+    <p>{{ author.vorname }} {{ author.nachname }}</p>
+    <p><a href="/">zurück zur Übersicht</a></p>    
+    @if(user !=undefined)
+    <a href="/edit/{{ post.id }}">bearbeiten</a>
+    @end
+</body>
+</html>

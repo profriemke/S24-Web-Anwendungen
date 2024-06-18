@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Editieren</h1>
+    <form action="/edit" method="post">
+        {{ csrfField()}}
+        <input type="hidden" name="id" value="{{ post.id }}">
+        <input type="text" name="teaser" value="{{ post.teaser }}"><br>
+        <input type="text" name="title" value="{{ post.title }}"><br>
+        <textarea name="text" cols="30" rows="10">{{ post.text }}</textarea><br>
+        <input type="submit" value="Speichern">
+    </form>
+</body>
+</html>

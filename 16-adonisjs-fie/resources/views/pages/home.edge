@@ -1,0 +1,30 @@
+@include('partials/html_header')
+
+
+<body>
+  @include('partials/navigation')
+  <h1>Mein Blog</h1>
+  @if(user == undefined)
+  <p>
+      <a href="/login">Login</a>
+  </p>
+  @else
+    <p>
+      Hallo, {{ user.vorname }}!
+    </p>
+     <p>
+
+       <a href="/admin/post/create">Post erstellen</a>
+       <a href="/logout">Logout</a>
+     </p>
+  @end
+    
+ 
+  <p>Willkommen auf meinem Blog. Hier schreibe ich über alles, was nicht interessiert.</p>
+  @each(post in posts)
+      <h2>{{ post.title }}</h2>
+      {{ post.teaser }} <a href="/post/{{ post.id }}">mehr ...</a>
+    </p>
+  @end
+</body>
+</html>

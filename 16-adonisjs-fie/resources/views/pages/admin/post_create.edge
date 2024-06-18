@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Post erstellen</title>
+</head>
+<body>
+    <h1>Post erstellen</h1>
+    <p>
+        <form action="/admin/post/create" method="POST" enctype="multipart/form-data">
+            {{ csrfField() }}
+            <input type="text" name="title" placeholder="Titel"><br>
+            <input type="text" name="teaser" placeholder="Teaser"><br>
+            <textarea name="text"></textarea><br>
+            <input type="file" name="image">
+            <input type="submit" value="Post erstellen">
+        </form>
+    </p>
+</body>
+</html>
