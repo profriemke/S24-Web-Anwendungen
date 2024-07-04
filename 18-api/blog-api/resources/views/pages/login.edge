@@ -1,0 +1,16 @@
+@include('partials/html_header')
+
+
+<body>
+    <h1>Login</h1>
+    @if(error != undefined)
+        {{ error }}
+    @end
+    <form action="/login" method="POST">
+        {{ csrfField() }}
+    <input type="text" name="login" placeholder="Login"><br>
+    <input type="password" name="password" placeholder="Password"><br>
+    <input type="submit">
+    </form>
+</body>
+</html>
